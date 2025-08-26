@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audios</title>
+
+    <style>
+        audio::webkit-media-controls-panel {
+            background-color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="number" id="tiempoElegido">
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <h1 id="textoAlarma" style="color: red;">Apagado</h1>
+
+    <audio id="audioAlarma" controls>
+        <source src="audio/alarma.mp3" type="audio/mpeg">
+        Sonido no habilitado
+    </audio>
+
+    <script>
+        let elementoSegundos = document.getElementById ("tiempoElegido");
+        let elementoTextoAlarma = document.getElementById ("textoAlarma");
+        let elementoSonidoAlarma = document.getElementById ("audioAlarma");
+
+        function comenzarTiempo() {
+            setTimeout(tiempoCumplido, 1000 * elementoSegundos.value)
+        }
+
+        function tiempoCumplido() {
+            elementoTextoAlarma.textContent = "Encendido";
+            elementoTextoAlarma.style.color = "green";
+            elementoSonidoAlarma.play();
+        }
+    </script>
+</body>
+
+</html>

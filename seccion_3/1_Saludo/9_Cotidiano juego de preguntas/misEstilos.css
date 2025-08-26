@@ -1,0 +1,22 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 55px;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+body{
+    background-color: rgb(236, 234, 122);
+}
+#buton{
+    width:150px;
+    height: 80px;
+}
+#vuton{
+    width: 200px;
+    height: 50px;
+}
+#textoAlarma{
+    color: rgb(230, 56, 56);
+}

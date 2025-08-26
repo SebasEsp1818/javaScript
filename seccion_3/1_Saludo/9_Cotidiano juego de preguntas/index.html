@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotidiano juego de pregutas</title>
+    <link rel="stylesheet" href="misEstilos.css">
+</head>
+<body onload="ComenzarCuentaRegresiva()">
+    <h1 >Responda las pregunta los más rápido que puedas  </h1>     <h1 id="textoAlarma" >30</h1>
+    
+    <p>Nombre del DT de la seleccion</p>
+    <input type="text" id="Pregunta1">
+    <button>ingresar</button>
+
+    <p>como se llama el actual presidente de Costa Rica</p>
+    <input type="text" id="Pregunta2">
+    <button>ingresar</button>
+
+    <p>Como se llama la capital de Costa Rica</p>
+    <input type="text" id="Pregunta3">
+    <button>ingresar</button>
+
+    <p>Cuanto es 2  +  2</p>
+    <input type="text" id="Pregunta4">
+    <button>ingresar</button>
+
+    <p>Cuantas horas tiene el dia</p>
+    <input type="text" id="Pregunta5">
+    <button>ingresar</button>
+
+    <audio id="AudioAlarma">
+        <source src="080205_life-lost-game-over-89697.mp3">
+    </audio>
+    
+    <br>
+    <br>
+    <button onclick="mostrarRespuestas()" id="vuton">Finalizar</button>
+    <br>
+    <button id="buton" onclick="reintentar()">Volver a intentar</button>
+
+    <script>
+        let tiempo=30;
+        let intervalo;
+        let elementoTextoAlarma=document.getElementById("textoAlarma");
+        let elementoSonido=document.getElementById("AudioAlarma");
+
+
+        function ComenzarCuentaRegresiva() {
+            tiempo=30;
+            elementoTextoAlarma.textContent=tiempo;
+            clearInterval(intervalo);
+            intervalo=setInterval(()=> {
+
+
+
+                if (tiempo>0){
+                    tiempo--;
+                    elementoTextoAlarma.textContent=tiempo;
+
+
+                }
+                else{
+                    tiempoCumplido();
+                    clearInterval(intervalo);
+                }
+
+            },1000);
+
+    
+        
+        }
+
+        function tiempoCumplido(){
+            alert("Game over, vuelve a intentarlo");
+            elementoSonido.play();
+           
+            
+        }
+
+
+        function mostrarRespuestas(){
+            let pregunta1=document.getElementById("Pregunta1");
+            let pregunta2=document.getElementById("Pregunta2");
+            let pregunta3=document.getElementById("Pregunta3");
+            let pregunta4=document.getElementById("Pregunta4");
+            let pregunta5=document.getElementById("Pregunta5");
+            alert("bien hecho, tus respuestas son: "+ pregunta1.value + ", " + pregunta2.value + ", "  + pregunta3.value + ", " + pregunta4.value + ", " + pregunta5.value);
+        }
+
+        function reintentar(){
+            location.reload();
+        }
+    </script>
+    
+</body>
+</html>

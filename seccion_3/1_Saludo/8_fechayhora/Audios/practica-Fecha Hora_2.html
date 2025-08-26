@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <title>Fecha y hora 2</title>
+</head>
+<body>
+  <p>
+    <button onclick="activar()">Click aqui</button>
+  </p>
+  <script>
+    // intervalo declarado fuera de la función
+    let intervalo = setInterval(test, 1000);
+
+    function activar() {
+      alert("Intervalo activado");
+    }
+
+    function test() {
+      console.log("+ 1 segundo");
+    }
+  </script>
+</body>
+</html>
