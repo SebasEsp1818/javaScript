@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="misEstilos.css">
+    </head>
+    <body>
+        <h1>Calculadora</h1>
+ 
+        <div class="inputs">
+            <input type="number" id="Put1">
+            <input type="number" id="Put2">
+        </div>
+ 
+        <p>
+            <button onclick="sumar()">+</button>
+            <button onclick="restar()">-</button>
+            <button onclick="multiplicar()">X</button>
+            <button onclick="dividir()">/</button>
+        </p>
+ 
+        <p>
+            <button onclick="raiz()">RAIZ</button>
+            <button onclick="potencia()">POTENCIA</button>
+        </p>
+ 
+        <p>
+            <button onclick="absoluto()">ABSOLUTO</button>
+            <button onclick="random()">RANDOM</button>
+        </p>
+ 
+        <h2>Resultado:</h2>
+        <div id="resultado"></div>
+ 
+        <p>
+            <button onclick="redondear()">ROUND</button>
+            <button onclick="redondearAbajo()">FLOOR</button>
+            <button onclick="redondearArriba()">CELL</button>
+        </p>
+ 
+        <script>
+            function sumar() {
+                let numero1 = document.getElementById("Put1");
+                let numero2 = document.getElementById("Put2");
+                let resultado = parseFloat(numero1.value) + parseFloat(numero2.value);
+                document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
+            }
+ 
+            function restar() {
+                let numero1 = document.getElementById("Put1");
+                let numero2 = document.getElementById("Put2");
+                let resultado = parseFloat(numero1.value) - parseFloat(numero2.value);
+                document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
+            }
+ 
+            function dividir() {
+                let numero1 = document.getElementById("Put1");
+                let numero2 = document.getElementById("Put2");
+                if (numero2.value == "0") {
+                    document.getElementById("resultado").textContent = "Error: División por cero";
+                } else {
+                    let resultado = parseFloat(numero1.value) / parseFloat(numero2.value);
+                    document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
+                }
+            }
+ 
+            function multiplicar() {
+                let numero1 = document.getElementById("Put1");
+                let numero2 = document.getElementById("Put2");
+                let resultado = parseFloat(numero1.value) * parseFloat(numero2.value);
+                document.getElementById("resultado").textContent = `Resultado: ${resultado}`;
+            }
+ 
+            function raiz() {
+                let numero1 = document.getElementById("Put1");
+                if (numero1.value !== "") {
+                    let resultado = Math.sqrt(parseFloat(numero1.value));
+                    document.getElementById("resultado").textContent = `La raíz es: ${resultado}`;
+                } else {
+                    alert("Ingresa un número en el primer campo");
+                }
+            }
+ 
+            function potencia() {
+                let numero1 = document.getElementById("Put1");
+                let numero2 = document.getElementById("Put2");
+                if (numero1.value !== "" && numero2.value !== "") {
+                    let resultado = Math.pow(parseFloat(numero1.value), parseFloat(numero2.value));
+                    document.getElementById("resultado").textContent = `La potencia es: ${resultado}`;
+                } else {
+                    alert("Por favor, ingresa ambos números");
+                }
+            }
+ 
+            function absoluto() {
+                let numero1 = document.getElementById("Put1");
+                if (numero1.value !== "") {
+                    let resultado = Math.abs(parseFloat(numero1.value));
+                    document.getElementById("resultado").textContent = `El valor absoluto es: ${resultado}`;
+                } else {
+                    alert("Por favor, ingresa un número en el primer campo");
+                }
+            }
+ 
+            function random() {
+                let resultado = Math.floor(Math.random() * 100) + 1;
+                document.getElementById("resultado").textContent = `Número aleatorio: ${resultado}`;
+            }
+ 
+            function redondear() {
+                let numero1 = document.getElementById("Put1");
+                let numero2 = document.getElementById("Put2");
+                if (numero1.value !== "" && numero2.value !== "") {
+                    let resultado = Math.round(parseFloat(numero1.value) + parseFloat(numero2.value));
+                    document.getElementById("resultado").textContent = `Redondeo al más cercano: ${resultado}`;
+                } else {
+                    alert("Por favor, ingresa números en ambos campos");
+                }
+            }
+ 
+            function redondearAbajo() {
+                let numero1 = document.getElementById("Put1");
+                let numero2 = document.getElementById("Put2");
+                if (numero1.value !== "" && numero2.value !== "") {
+                    let resultado = Math.floor(parseFloat(numero1.value) + parseFloat(numero2.value));
+                    document.getElementById("resultado").textContent = `Redondeo hacia abajo: ${resultado}`;
+                } else {
+                    alert("Por favor, ingresa números en ambos campos");
+                }
+            }
+ 
+            function redondearArriba() {
+                let numero1 = document.getElementById("Put1");
+                let numero2 = document.getElementById("Put2");
+                if (numero1.value !== "" && numero2.value !== "") {
+                    let resultado = Math.ceil(parseFloat(numero1.value) + parseFloat(numero2.value));
+                    document.getElementById("resultado").textContent = `Redondeo hacia arriba: ${resultado}`;
+                } else {
+                    alert("Por favor, ingresa números en ambos campos");
+                }
+            }
+        </script>
+    </body>
+</html>
