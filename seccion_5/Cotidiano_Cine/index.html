@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendacion de Peliculas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!--Titulo y subtitulo-->
+    <h1>¡Bienvenido al cine!</h1>
+    <h3>---Menú---</h3>
+    <!--Descripcion-->
+    <p>Queremos hacer de tu visita, una experiencia más placentera. Para eso, ingresa tu edad y selecciona el género que
+        más te guste, y <br>
+        te recomendamos tu pelicula ideal.</p>
+    <!--Espacio para el usuario indique su edad-->
+    <label for="Edad" class="edad-label">Edad</label>
+<input type="number" id="Edad" name="edad">
+
+    
+    <br>
+    <!--Botones-->
+    <button onclick="Pelicula('Drama')" class="Botones">Drama</button>
+    <button onclick="Pelicula('Comedia')" class="Botones">Comedia</button>
+    <button onclick="Pelicula('Musical')" class="Botones">Musical</button>
+    <button onclick="Pelicula('Crimen')" class="Botones">Crimen</button>
+    <br>
+    <br>
+    <!-- Botón de Reiniciar -->
+    <button onclick="reiniciarRecomendacion()" class="Botones">Reiniciar</button>
+
+    <!--Titulo e texto que cambiara para la recomendacion-->
+    <h3>Nuestra recomendación: </h3>
+    <p id="Recomendacion">Recomendacion: </p>
+</body>
+
+</html>
