@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica: Etiquetas</title>
+</head>
+<body>
+  <h2>Práctica: Etiquetas y bucles anidados</h2>
+
+  <script>
+    function testLoop() {
+      let miArray = [[2, 4, 5], [3, 0, 6], [9, 4, 7]];
+
+      buclePrincipal: // etiqueta
+      for (let i = 0; i < miArray.length; i++) {
+        for (let j = 0; j < miArray[i].length; j++) {
+          let num = miArray[i][j];
+          console.log(num);
+          if (num === 0) {
+            break buclePrincipal; // rompe ambos bucles
+          }
+        }
+      }
+    }
+
+    testLoop();
+  </script>
+</body>
+</html>
