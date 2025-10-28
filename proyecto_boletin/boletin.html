@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Boletín</title>
+     <link rel="stylesheet" href="boletin.css">
+     <img src="logoCTP.png" class="logo">
+</head>
+<body>
+   
+    <h1>Bienvenido a tu boletín estudiantil</h1>
+    <h2>Alumno: Bruce Wayne</h2> 
+    
+    <h3>Notas:</h3>
+    <ul id="listaNotas">
+        </ul>
+
+    <h3>Promedio</h3>
+    <button onclick="calcularPromedio()" class="boton">Calcular promedio</button>
+    <p class="resultado" id="resultadoPromedio"></p>
+
+    <h3>Nota más alta</h3>
+    <button onclick="notaMasAlta()" class="boton">Buscar nota más alta</button>
+    <p class="resultado" id="resultadoNotaAlta"></p>
+
+    <h3>¿Hubo algún aplazo?</h3>
+    <button onclick="hayAplazados()" class="boton">Consultar aplazos</button>
+    <p class="resultado" id="resultadoAplazados"></p>
+
+    <script src="boletin.js"></script> 
+    
+</body>
+</html>
